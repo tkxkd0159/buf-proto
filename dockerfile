@@ -18,10 +18,10 @@ RUN PREFIX="/usr/local" && \
     "https://github.com/bufbuild/buf/releases/download/v${VERSION}/buf-$(uname -s)-$(uname -m).tar.gz" | \
     tar -xvzf - -C "${PREFIX}" --strip-components 1
 
-RUN go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@latest && \
-    go install google.golang.org/protobuf/cmd/protoc-gen-go@latest && \
-    go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest && \
-    go install github.com/cosmos/gogoproto/protoc-gen-gocosmos@master && \
-    go install github.com/cosmos/cosmos-proto/cmd/protoc-gen-go-pulsar@latest
+RUN go install github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway@v1.16.0 && \
+    go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28.0 && \
+    go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2.0 && \
+    go install github.com/cosmos/gogoproto/protoc-gen-gocosmos@v1.4.1-0.20220401124828-90e4c3283529 && \
+    go install github.com/cosmos/cosmos-proto/cmd/protoc-gen-go-pulsar@v1.0.0-alpha7
 
 CMD ["/bin/bash"]
