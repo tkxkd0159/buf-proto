@@ -25,7 +25,8 @@ USER ${OWNER}
 RUN go install github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway@v1.16.0 && \
     go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28.0 && \
     go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2.0 && \
-    go install github.com/cosmos/gogoproto/protoc-gen-gocosmos@v1.4.1-0.20220401124828-90e4c3283529 && \
-    go install github.com/cosmos/cosmos-proto/cmd/protoc-gen-go-pulsar@v1.0.0-alpha7
+    go install github.com/cosmos/cosmos-proto/cmd/protoc-gen-go-pulsar@v1.0.0-alpha7 && \
+    cd ${HOME} && git clone -b v0.3.1 --depth=1 https://github.com/regen-network/cosmos-proto.git && \
+    cd cosmos-proto/protoc-gen-gocosmos && go install
 
 CMD ["/bin/bash"]
