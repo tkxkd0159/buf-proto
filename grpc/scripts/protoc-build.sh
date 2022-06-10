@@ -4,7 +4,7 @@ cd proto
 find . -maxdepth 1 -name '*.proto' -print0 |
 while IFS= read -r -d '' file; do
   if grep "option go_package" "$file" &> /dev/null ; then
-    protoc --go_out=".." "$file"
+    protoc --go_out=..  --go-grpc_out=.. "$file"
     fi
   done
 

@@ -76,7 +76,7 @@ type Person struct {
 	unknownFields protoimpl.UnknownFields
 
 	Name        string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Id          int32                  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"` // Unique ID number for this person.
+	Id          int32                  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
 	Email       string                 `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
 	Phones      []*Person_PhoneNumber  `protobuf:"bytes,4,rep,name=phones,proto3" json:"phones,omitempty"`
 	LastUpdated *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=last_updated,json=lastUpdated,proto3" json:"last_updated,omitempty"`

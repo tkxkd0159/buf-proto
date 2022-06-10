@@ -1,7 +1,7 @@
 package main
 
-import "github.com/tkxkd0159/buf-proto/grpc/pkg/grpc"
+import "github.com/tkxkd0159/buf-proto/grpc/pkg/grpcreg"
 
 func main() {
-	grpcgo.Sample()
+	grpcreg.StartGrpcSrv()
 }
