@@ -1,0 +1,15 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: github.com/tkxkd0159/buf-proto/buf-tutorial/pb
+plugins:
+  - plugin: buf.build/protocolbuffers/go # Generate Go specific code for your .proto files
+    out: pb
+    opt: paths=source_relative
+  - plugin: buf.build/connectrpc/go # Generate client and server stubs
+                                    # These are compatible with the gRPC, gRPC-Web, and Connect RPC protocols.
+                                    # Connect is an RPC protocol which supports gRPC — including streaming!
+                                    # It interoperates seamlessly with Envoy, grpcurl, gRPC Gateway, and every other gRPC implementation.
+    out: pb
+    opt: paths=source_relative
