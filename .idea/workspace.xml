@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e506a9f7-5760-48b1-925f-eb531123d55d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/buf-tutorial/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buf-tutorial/proto/google/type/datetime.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buf-tutorial/proto/js/v1/alltype.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buf-tour/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/buf-tour/finish/buf.gen.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/buf-tour/finish/buf.work.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/buf-tour/finish/client/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/buf-tour/finish/gen/proto/go/payment/v1alpha1/payment.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/buf-tour/finish/gen/proto/go/pet/v1/pet.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/buf-tour/finish/gen/proto/go/pet/v1/pet_grpc.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/buf-tour/finish/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/buf-tour/finish/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/buf-tour/finish/paymentapis/buf.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/buf-tour/finish/paymentapis/buf.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/buf-tour/finish/paymentapis/payment/v1alpha1/payment.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/buf-tour/finish/petapis/buf.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/buf-tour/finish/petapis/buf.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/buf-tour/finish/petapis/buf.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/buf-tour/finish/petapis/pet/v1/pet.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/buf-tour/finish/server/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/buf-tour/start/petapis/google/type/datetime.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/buf-tour/start/petapis/pet/v1/pet.proto" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" url="file:///opt/homebrew/opt/go/libexec" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2ZYhIjoLP18QandEVl260hPPeoT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "/Users/user/github.com/tkxkd0159/buf-proto",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-gosdk-467a64f6063b-ee0e143f3e2b-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-233.11799.286" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>

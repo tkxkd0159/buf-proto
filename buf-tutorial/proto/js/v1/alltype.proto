@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package js.v1;
+
+import "google/protobuf/any.proto";
+
+option go_package = "github.com/tkxkd0159/buf-proto/buf-tutorial/types";
+
+message AllType {
+  float float32 = 2;
+  double float64 = 1;
+  int32 int32 = 3;
+  int64 int64 = 4;
+  uint32 uint32 = 5;
+  uint64 uint64 = 6;
+  sint32 int32_2 = 7; // These more efficiently encode negative numbers than regular int32s.
+  sint64 int64_2 = 8;
+  fixed32 uint32_2 = 9; // Always four bytes. More efficient than uint32 if values are often greater than 2^28.
+  fixed64 uint64_2 = 10; // Always eight bytes. More efficient than uint64 if values are often greater than 2^56.
+  sfixed32 int32_3 = 11; // Always four bytes.
+  sfixed64 int64_3 = 12; // Always eight bytes.
+  bool bool = 13; // the default value is false.
+  string string = 14; // the default value is the empty string.
+  bytes byte_slice = 15; // the default value is empty bytes.
+  EnumType enum = 16;
+  AnyType any = 17;
+}
+
+enum EnumType {
+  UNKNOWN = 0;
+  STARTED = 1;
+  RUNNING = 2;
+  STOPPED = 3;
+}
+
+message AnyType {
+  google.protobuf.Any any = 1;
+}
