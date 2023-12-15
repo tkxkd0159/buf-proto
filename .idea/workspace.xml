@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29d28cbe-4330-4ae9-b0f7-6e3b121efacb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/buf-tutorial/buf.gen.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/buf-tutorial/cmd/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buf-tutorial/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/buf-tutorial/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buf-tutorial/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/buf-tutorial/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buf-tutorial/proto/js/v1/alltype.proto" beforeDir="false" afterPath="$PROJECT_DIR$/buf-tutorial/proto/js/v1/alltype.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buf-tour/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/buf-tutorial/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/buf-tutorial/cmd/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

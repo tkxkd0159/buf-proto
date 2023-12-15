@@ -2,15 +2,21 @@ package main
 
 import (
 	"fmt"
+	"reflect"
+	"strings"
 	"time"
 
+	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/types/known/anypb"
 
 	gtype "github.com/tkxkd0159/buf-proto/buf-tutorial/pb/google/type"
 	jstype "github.com/tkxkd0159/buf-proto/buf-tutorial/pb/js/v1"
 )
 
+var interfaceRegistry = make(map[string]reflect.Type)
+
 func main() {
+
 	tz := gtype.DateTime_TimeZone{TimeZone: &gtype.TimeZone{Id: "Asia/Seoul"}}
 	currentTime := time.Now()
 	ts := gtype.DateTime{
@@ -62,7 +68,82 @@ func main() {
 		Uint64_2:  6,
 	}
 
+	fmt.Println(strings.Repeat("=", 10), "<Marshal/Unmarshal protobuf type>", strings.Repeat("=", 10))
 	if ptype.CreatedAt != nil {
-		fmt.Printf("%s\nvalues:\n\t%s", ptype.ProtoReflect().Descriptor().FullName(), ptype)
+		fmt.Printf("Proto TypeURL: %s\n", ptype.ProtoReflect().Descriptor().FullName())
 	}
+	// 1. Normal Marshal/Unmarshal
+	seriealized, err := proto.Marshal(ptype)
+	if err != nil {
+		panic(err)
+	}
+	ptype2 := new(jstype.AllType)
+	err = proto.Unmarshal(seriealized, ptype2)
+	if err != nil {
+		panic(err)
+	}
+
+	// 2. Can I unmarshal to extended type?
+	originProto := &jstype.AnyTarget{Id: 2, Name: "ljs"}
+	b, err := proto.Marshal(originProto)
+	if err != nil {
+		panic(err)
+	}
+	extendedProto := new(jstype.AnyTargetExtend)
+	if err := proto.Unmarshal(b, extendedProto); err != nil {
+		panic(err)
+	}
+	fmt.Printf("Success!!!\n")
+
+	// 3. How can I process Any type?
+	interfaceRegistry[string(ptype.ProtoReflect().Descriptor().FullName())] = reflect.TypeOf(new(jstype.AllType))
+	ptypeAny, err := anypb.New(ptype)
+	if err != nil {
+		panic(err)
+	}
+	msg := reflectAny(ptypeAny, interfaceRegistry)
+
+	if res := processMsg(msg); res != nil {
+		fmt.Println(res)
+	}
+}
+
+func reflectAny(any *anypb.Any, ir map[string]reflect.Type) proto.Message {
+	fmt.Println(strings.Repeat("=", 10), "<reflect protobuf Any type>", strings.Repeat("=", 10))
+	typeURL := strings.Split(any.GetTypeUrl(), "/")[1]
+	t := ir[typeURL]
+	v := reflect.New(t.Elem())
+	fmt.Println(t, t.Kind(), t.Elem()) // *jsv1.AllType / ptr / jsv1.AllType
+	if v.Kind() == reflect.Ptr {
+		fmt.Println(v.Pointer(), v.Type(), v.Elem().Type()) // <uintptr> / *jsv1.AllType / jsv1.AllType
+	}
+
+	msg, ok := v.Interface().(proto.Message)
+	if !ok {
+		panic("not proto.Message")
+	}
+
+	err := proto.Unmarshal(any.GetValue(), msg)
+	if err != nil {
+		panic(err)
+	}
+	return msg
+}
+
+func processMsg(m proto.Message) *jstype.AllType {
+	fmt.Println(strings.Repeat("=", 10), "<process interface type with reflection>", strings.Repeat("=", 10))
+	t := reflect.TypeOf(m)
+	v := reflect.ValueOf(m)
+	fmt.Println(t, t.Kind(), t.Elem()) // *jsv1.AllType / ptr / jsv1.AllType
+	if v.Kind() == reflect.Ptr {
+		fmt.Println(v.Pointer(), v.Type(), v.Elem().Type()) // <uintptr> / *jsv1.AllType / jsv1.AllType
+	}
+	if t.Elem().String() == "jsv1.AllType" {
+		realValue, ok := m.(*jstype.AllType)
+		if ok {
+			return realValue
+		}
+	}
+
+	return nil
 }
